@@ -3,8 +3,8 @@ import './App.css'
 import Die from './Die'
 import { nanoid } from 'nanoid'
 import Confetti from "react-confetti"
-
-let triesLeft = 15;
+const countOfTries=15;
+let triesLeft =countOfTries;
 let failed = false;
 function App() {
   //generate a random number between 1 and 6
@@ -14,7 +14,7 @@ function App() {
   console.log(randomNumber);
 
   const generateAllNewDice = () => {
-    const newDice = new Array(10).fill().map(ele =>
+    const newDice = new Array(15).fill().map(ele =>
     (
       {
         value: randomNumber(),
@@ -32,7 +32,7 @@ function App() {
     triesLeft = triesLeft - 1;
     console.log("tried left " + triesLeft)
     if (gameOver) {
-      triesLeft = 15;
+      triesLeft = countOfTries;
       setDiceState(generateAllNewDice())
       return;
     }
