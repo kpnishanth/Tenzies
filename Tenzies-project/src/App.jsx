@@ -3,7 +3,7 @@ import './App.css'
 import Die from './Die'
 import { nanoid } from 'nanoid'
 import Confetti from "react-confetti"
-const countOfTries=15;
+const countOfTries=10;
 let triesLeft =countOfTries;
 let failed = false;
 function App() {
@@ -14,7 +14,7 @@ function App() {
   console.log(randomNumber);
 
   const generateAllNewDice = () => {
-    const newDice = new Array(15).fill().map(ele =>
+    const newDice = new Array(10).fill().map(ele =>
     (
       {
         value: randomNumber(),
